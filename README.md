@@ -6,13 +6,14 @@ Authors: Alexandre Boucaud & Emille Ishida
 
 ### Getting started
 
-1. Install ramp-workflow (rampwf)
+1. Install [`ramp-worflow`](https://github.com/paris-saclay-cds/ramp-workflow) (a.k.a. `rampwf`)
     ```
     $ pip install git+https://github.com/paris-saclay-cds/ramp-workflow.git
     ```
 2. Clone this repo and download the data
     ```
-    $ git clone 
+    $ git clone https://github.com/ramp-kits/supernovae.git
+    $ cd supernovae
     $ python download_data.py
     ```
 3. Test the default submission
