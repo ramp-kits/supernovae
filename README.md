@@ -1,15 +1,27 @@
 # PLAsTiCC RAMP starting kit
 
-Authors: Emille Ishida & Alexandre Boucaud
+Authors: Alexandre Boucaud & Emille Ishida
 
 [![Build Status](https://travis-ci.org/ramp-kits/supernovae.svg?branch=master)](https://travis-ci.org/ramp-kits/supernovae)
 
-Go to [`ramp-worflow`](https://github.com/paris-saclay-cds/ramp-workflow) for more help on the [RAMP](http:www.ramp.studio) ecosystem.
+### Getting started
 
-Install ramp-workflow (rampwf), then execute
+1. Install ramp-workflow (rampwf)
+    ```
+    $ pip install git+https://github.com/paris-saclay-cds/ramp-workflow.git
+    ```
+2. Clone this repo and download the data
+    ```
+    $ git clone 
+    $ python download_data.py
+    ```
+3. Test the default submission
+    ```
+    $ ramp_test_submission --quick-test
+    ```
 
-```
-ramp_test_submission --quick-test
-```
+Visit the [`ramp-worflow` wiki](https://github.com/paris-saclay-cds/ramp-workflow/wiki) for more help on the [RAMP](http://ramp.studio) ecosystem.
 
-to test the starting kit submission (`submissions/starting_kit`).
+### Notebook
+
+**coming soon..**
