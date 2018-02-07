@@ -32,20 +32,30 @@ def get_cv(X, y):
     return cv.split(X, y)
 
 
-def _read_data(path, f_name, frac=None):
-    with gzip.open(os.path.join(path, 'data', f_name), 'rb') as f:
-        data = pickle.load(f)
+def _read_data(path, f_name):
+    test = os.getenv('RAMP_TEST_MODE', 0)
+
+    if test:
+        suffix = '_mini'
+    else:
+        suffix = ''
+
+    data_path = os.path.join(path, 'data', 'des_{type}{suffix}.pkl'.format(
+        type=f_name, suffix=suffix))
+
+    try:
+        with gzip.open(data_path, 'rb') as f:
+            data = pickle.load(f)
+    except IOError:
+        raise IOError("'{} not found. Ensure you ran "
+                      "'python download_data.py' to "
+                      "obtain the train/test data".format(data_path))
 
     X_df = to_df(data)
     sntype = X_df.type
     X_df = X_df.drop(columns=['type'])
     y = pd.get_dummies(sntype == 0, prefix='SNIa', drop_first=True)
     y_array = y.values.ravel()
-
-    if frac:
-        maxidx = int(frac * y.size)
-        print("Loading the {} first elements".format(maxidx))
-        return X_df[:maxidx], y_array[:maxidx]
 
     return X_df, y_array
 
@@ -64,11 +74,9 @@ def to_df(data):
     return pd.DataFrame.from_dict(data, orient='index')
 
 
-def get_train_data(path='.', frac=0.3):
-    f_name = 'des_train.pkl'
-    return _read_data(path, f_name, frac=frac)
+def get_train_data(path='.'):
+    return _read_data(path, 'train')
 
 
-def get_test_data(path='.', frac=0.01):
-    f_name = 'des_test.pkl'
-    return _read_data(path, f_name, frac=frac)
+def get_test_data(path='.'):
+    return _read_data(path, 'test')
