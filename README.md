@@ -10,11 +10,12 @@ Authors: Alexandre Boucaud & Emille Ishida
     ```
     $ pip install git+https://github.com/paris-saclay-cds/ramp-workflow.git
     ```
-2. Clone this repo and download the data
+2. Clone this repo, download the data and install dependencies
     ```
     $ git clone https://github.com/ramp-kits/supernovae.git
     $ cd supernovae
     $ python download_data.py
+    $ pip install -r requirements.txt
     ```
 3. Test the default submission
     ```
