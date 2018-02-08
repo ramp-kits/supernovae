@@ -64,9 +64,9 @@ def to_df(data):
     for idx in data:
         sn = data[idx]
         for filt in 'griz':
-            sn['%s_mjd' % filt] = np.array(sn[filt]['mjd'])
-            sn['%s_fluxcal' % filt] = np.array(sn[filt]['fluxcal'])
-            sn['%s_fluxcalerr' % filt] = np.array(sn[filt]['fluxcalerr'])
+            sn['mjd_%s' % filt] = np.array(sn[filt]['mjd'])
+            sn['fluxcal_%s' % filt] = np.array(sn[filt]['fluxcal'])
+            sn['fluxcalerr_%s' % filt] = np.array(sn[filt]['fluxcalerr'])
             del sn[filt]
         sn.update(sn['header'])
         del sn['header']

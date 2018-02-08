@@ -42,7 +42,7 @@ def filter_snr(X_df, min_snr, min_epoch):
     # For each light curve
     for filt in DES_FILTERS:
         # Compute the SNR (flux / flux_err)
-        serie = X_df['%s_fluxcal' % filt] / X_df['%s_fluxcalerr' % filt]
+        serie = X_df['fluxcal_%s' % filt] / X_df['fluxcalerr_%s' % filt]
         # Threshold it
         serie = serie.apply(lambda x: x > min_snr)
         # Discard if not enough remaining values
@@ -127,8 +127,8 @@ def parametric_fit(X_df, filters=DES_FILTERS):
     for idx, snid in enumerate(X_df.index):
         params = np.zeros((len(filters), n_params))
         for id_filt, filt in enumerate(filters):
-            time = X_df.loc[snid, '%s_mjd' % filt]
-            flux = X_df.loc[snid, '%s_fluxcal' % filt]
+            time = X_df.loc[snid, 'mjd_%s' % filt]
+            flux = X_df.loc[snid, 'fluxcal_%s' % filt]
             try:
                 params[id_filt] = _fit_lightcurve(time, flux)
             except ValueError:
