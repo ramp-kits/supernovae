@@ -1,6 +1,6 @@
 numpy
 scipy
 scikit-learn
-pandas
+pandas>=0.21
 matplotlib
 seaborn
