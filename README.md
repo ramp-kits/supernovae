@@ -1,5 +1,7 @@
 # PLAsTiCC RAMP starting kit
 
+Classification of transients using light curves data.
+
 Authors: Alexandre Boucaud & Emille Ishida
 
 [![Build Status](https://travis-ci.org/ramp-kits/supernovae.svg?branch=master)](https://travis-ci.org/ramp-kits/supernovae)
@@ -28,4 +30,4 @@ Visit the [`ramp-worflow` wiki](https://github.com/paris-saclay-cds/ramp-workflo
 
 ### Notebook
 
-**coming soon..**
+Get started on this RAMP with the [dedicated notebook](PLAsTiCC_starting_kit.ipynb).
