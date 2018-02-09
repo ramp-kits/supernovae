@@ -4,6 +4,8 @@ Authors: Alexandre Boucaud & Emille Ishida
 
 [![Build Status](https://travis-ci.org/ramp-kits/supernovae.svg?branch=master)](https://travis-ci.org/ramp-kits/supernovae)
 
+<img src="img/fullLC.gif" width="600px">
+
 ### Getting started
 
 1. Install [`ramp-worflow`](https://github.com/paris-saclay-cds/ramp-workflow) (a.k.a. `rampwf`)
