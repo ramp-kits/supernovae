@@ -30,4 +30,4 @@ Visit the [`ramp-worflow` wiki](https://github.com/paris-saclay-cds/ramp-workflo
 
 ### Notebook
 
-Get started on this RAMP with the [dedicated notebook](PLAsTiCC_starting_kit.ipynb).
+Get started on this RAMP with the [dedicated notebook](http://nbviewer.jupyter.org/github/ramp-kits/supernovae/blob/master/PLAsTiCC_starting_kit.ipynb).
