@@ -98,12 +98,10 @@ def _fit_lightcurve(time, flux):
     t0 = scaled_time[flux.argmax()]
     guess = (0, 0, t0, 40, -5)
 
-    def errfunc(params, time, flux):
-        return abs(flux - _bazin(time, *params))
+    def errfunc(params):
+        return abs(flux - _bazin(scaled_time, *params))
 
-    result = least_squares(errfunc, guess,
-                           args=(scaled_time, flux),
-                           method='lm')
+    result = least_squares(errfunc, guess, method='lm')
 
     return result.x
 
