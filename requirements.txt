@@ -4,3 +4,4 @@ scikit-learn
 pandas>=0.21
 matplotlib
 seaborn
+jupyter
