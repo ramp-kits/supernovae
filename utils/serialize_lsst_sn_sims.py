@@ -108,7 +108,7 @@ def serialize_lsst_sims(path):
     """
     directory = Path.cwd() / path
     # List all header files in the given directory
-    header_files = directory.glob('LSST*HEAD.FITS')
+    header_files = directory.glob('*HEAD.FITS*')
 
     train = {}
     target = {}
