@@ -34,9 +34,4 @@ def main(filenames, output_dir='data'):
 
 
 if __name__ == '__main__':
-    test = os.getenv('RAMP_TEST_MODE', 0)
-
-    if test:
-        main(TEST_DATA)
-    else:
-        main(DATA + TEST_DATA)
+    main(DATA + TEST_DATA)
