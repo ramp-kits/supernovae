@@ -38,6 +38,5 @@ if __name__ == '__main__':
 
     if test:
         main(TEST_DATA)
-        print("Testing mode, not downloading any data.")
     else:
         main(DATA + TEST_DATA)
