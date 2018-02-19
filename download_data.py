@@ -10,13 +10,13 @@ except ImportError:
 URLBASE = 'https://storage.ramp.studio/supernovae/{}'
 DATA = [
     'des_train.pkl',
+    'des_test.pkl']
+TEST_DATA = [
     'des_train_mini.pkl',
-    'des_test.pkl',
     'des_test_mini.pkl']
 
 
-def main(output_dir='data'):
-    filenames = DATA
+def main(filenames, output_dir='data'):
     urls = [URLBASE.format(filename) for filename in filenames]
 
     if not os.path.exists(output_dir):
@@ -37,6 +37,7 @@ if __name__ == '__main__':
     test = os.getenv('RAMP_TEST_MODE', 0)
 
     if test:
+        main(TEST_DATA)
         print("Testing mode, not downloading any data.")
     else:
-        main()
+        main(DATA + TEST_DATA)
